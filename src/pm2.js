@@ -32,9 +32,13 @@ async function pm2Logs(target, lines = 30) {
 async function pm2Jlist() {
   const raw = await runCommand("pm2 jlist");
   try {
-    return JSON.parse(raw);
+    // pm2 jlist puede incluir warnings antes del JSON, extraer solo el array
+    const jsonStart = raw.indexOf("[");
+    const jsonData = jsonStart !== -1 ? raw.slice(jsonStart) : raw;
+    return JSON.parse(jsonData);
   } catch (e) {
-    console.error("pm2 jlist output:", raw);
+    console.error("pm2 jlist parse error:", e.message);
+    console.error("pm2 jlist raw output:", raw.slice(0, 200));
     return null;
   }
 }
