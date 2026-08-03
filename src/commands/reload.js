@@ -12,7 +12,7 @@ module.exports = function registerReloadCommand(bot) {
       return;
     }
 
-    const target = match[1] ? match[1].trim() : "4";
+    const target = match[1] ? match[1].trim() : "0";
     const chatId = msg.chat.id;
 
     bot.sendMessage(

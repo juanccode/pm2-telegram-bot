@@ -11,7 +11,7 @@ module.exports = function registerLogsCommand(bot) {
       return;
     }
 
-    const target = match[1] ? match[1].trim() : "4";
+    const target = match[1] ? match[1].trim() : "0";
     const output = await pm2Logs(target);
     const trimmed = output.length > 3500 ? output.slice(-3500) : output;
 

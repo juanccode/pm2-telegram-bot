@@ -26,9 +26,9 @@ bot.onText(/\/start|\/help/, (msg) => {
     `Servidor: ${SERVER_NAME}\n\n` +
       "Comandos disponibles:\n" +
       "/ids - lista los ids y nombres de los procesos pm2\n" +
-      "/reload [id] - pm2 reload (default id 4)\n" +
+      "/reload [id] - pm2 reload (default id 0)\n" +
       "/status - pm2 list\n" +
-      "/logs [id] - últimas líneas de log (default id 4)",
+      "/logs [id] - últimas líneas de log (default id 0)",
   );
 });
 
