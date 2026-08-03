@@ -1,0 +1,18 @@
+{
+  "name": "pm2-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot to reload, monitor and check logs of PM2 processes on a VPS, with user-based access control.",
+  "main": "src/bot.js",
+  "scripts": {
+    "start": "node src/bot.js",
+    "start:dev": "nodemon src/bot.js"
+  },
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "node-telegram-bot-api": "0.66.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "3.1.14"
+  }
+}
