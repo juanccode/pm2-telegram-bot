@@ -11,7 +11,16 @@ module.exports = function registerLogsCommand(bot) {
       return;
     }
 
-    const target = match[1] ? match[1].trim() : "0";
+    const target = match[1] ? match[1].trim() : null;
+
+    if (!target) {
+      bot.sendMessage(
+        msg.chat.id,
+        "⚠️ Debes indicar el ID del proceso.\nEjemplo: /logs 4\n\nUsa /ids para ver los procesos disponibles.",
+      );
+      return;
+    }
+
     const output = await pm2Logs(target);
     const trimmed = output.length > 3500 ? output.slice(-3500) : output;
 

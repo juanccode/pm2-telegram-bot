@@ -12,8 +12,16 @@ module.exports = function registerReloadCommand(bot) {
       return;
     }
 
-    const target = match[1] ? match[1].trim() : "0";
+    const target = match[1] ? match[1].trim() : null;
     const chatId = msg.chat.id;
+
+    if (!target) {
+      bot.sendMessage(
+        chatId,
+        "⚠️ Debes indicar el ID del proceso.\nEjemplo: /reload 4\n\nUsa /ids para ver los procesos disponibles.",
+      );
+      return;
+    }
 
     bot.sendMessage(
       chatId,

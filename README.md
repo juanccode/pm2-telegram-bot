@@ -58,9 +58,9 @@ SERVER_NAME=VPS-1
 | ------------------ | ------------------------------------------------------------ |
 | `/start` o `/help` | Muestra los comandos disponibles                             |
 | `/ids`             | Lista los IDs y nombres de los procesos PM2                  |
-| `/reload [id]`     | Ejecuta `pm2 reload` en el proceso indicado (default: `0`)   |
+| `/reload <id>`     | Ejecuta `pm2 reload` en el proceso indicado (ID obligatorio) |
 | `/status`          | Muestra el estado de todos los procesos (`pm2 list`)         |
-| `/logs [id]`       | Muestra las últimas líneas de log del proceso (default: `0`) |
+| `/logs <id>`       | Muestra las últimas líneas de log del proceso (ID obligatorio) |
 
 ## 🛠️ Desarrollo
 
