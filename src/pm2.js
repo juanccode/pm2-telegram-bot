@@ -34,6 +34,7 @@ async function pm2Jlist() {
   try {
     return JSON.parse(raw);
   } catch (e) {
+    console.error("pm2 jlist output:", raw);
     return null;
   }
 }
